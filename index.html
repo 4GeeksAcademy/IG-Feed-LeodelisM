@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feed IG con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+  <!-- Navbar -->
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+
+  <!-- Button trigger modal -->
+
+      <button type="button" class="btn btn-success ms-auto me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Create a new post
+      </button>
+
+  <!-- Modal -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create new post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="modal-body">
+                <span>Caption:</span>
+              <div class="input-group">
+                <textarea class="form-control" aria-label="With textarea"><!--Add the caption of your post here arreglar--></textarea>
+              </div>
+                <button type="button" class="btn btn-light">
+                <i class="fa-solid fa-camera-retro"></i>
+                </button>
+                <button type="button" class="btn btn-light">
+                <i class="fa-solid fa-location-dot"></i>
+                </button>       
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+      <!-- dropdowns -->
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle ms-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><button class="dropdown-item" type="button">Profile</button></li>
+          <li><button class="dropdown-item" type="button">Accesibility</button></li>
+          <li><button class="dropdown-item" type="button">Privacy on Data</button></li>
+          <li><button class="dropdown-item" type="button">Log Out</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

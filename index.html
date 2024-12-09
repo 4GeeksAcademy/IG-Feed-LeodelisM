@@ -9,21 +9,23 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid">
 
-  <!-- Navbar -->
-      <nav class="navbar bg-body-tertiary">
-        <a class="navbar-brand" href="#">
-        <i class="fa-brands fa-instagram"></i> Instagram
+    <!--Iniciando con un container-->
+    <div class="container">
+
+ <!-- Barra de Navegacion (Navbar) -->
+      <nav class="navbar bg-dark-subtle mt-4">
+        <a class="navbar-brand ms-5" href="#">
+          <i class="fa-brands fa-instagram me-1"></i>Instagram
         </a>
 
-  <!-- Button trigger modal -->
+        <!-- Botón de Create New Post -->
 
-      <button type="button" class="btn btn-success ms-auto me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Create a new post
-      </button>
+      <button type="button" class="btn btn-success ms-auto me-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Create a new post
+        </button>
 
-  <!-- Modal -->
+        <!-- Componente Modal (Modal) -->
 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -35,12 +37,16 @@
             <div class="modal-body">
               <span>Caption:</span>
             <div class="input-group">
-              <textarea class="form-control my-2" aria-label="With textarea"><!--Add the caption of your post here arreglar--></textarea>
+              <div class="form-floating">
+                <textarea class="form-control my-2" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Add the caption of your post here</label>
+        </div>
+
             </div>
-              <button type="button" class="btn btn-light my-2">
+              <button type="button" class="btn btn-light ms-auto mt-1 border border-1">
               <i class="fa-solid fa-camera-retro"></i>
               </button>
-              <button type="button" class="btn btn-light my-2 mx-1">
+              <button type="button" class="btn btn-light ms-2 me-1 mt-1 border border-1">
               <i class="fa-solid fa-location-dot"></i>
               </button>       
             </div>
@@ -52,49 +58,118 @@
           </div>
       </div>
 
-      <!-- dropdowns -->
+      <!-- Boton despegable gris con el engranaje (dropdowns) -->
 
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle ms-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-gear"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li><button class="dropdown-item" type="button">Profile</button></li>
           <li><button class="dropdown-item" type="button">Accesibility</button></li>
           <li><button class="dropdown-item" type="button">Privacy on Data</button></li>
-          <li><button class="dropdown-item" type="button">Log Out</button></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#">Log Out</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-    <!-- Nav Feed -->
+  <!-- Barra de pestañas (Nav tabs) -->
 
+  <div class="d-flex justify-content-center">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true"><i class="fa-solid fa-grip"></i></button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false"><i class="fa-solid fa-user"></i></button>
-      </li>
-    </ul
-      
-    <!-- Visualización tipo Grid -->
-   
-      <div class="row g-2">
-        <!-- 9 Imágenes -->
-        <div class="col-4"><img src="https://picsum.photos/id/28/800" alt="Imagen 1" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/170/800" alt="Imagen 2" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/30/800" alt="Imagen 3" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/108/800" alt="Imagen 4" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/104/800" alt="Imagen 5" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/249/800" alt="Imagen 6" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/129/800" alt="Imagen 7" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/169/800" alt="Imagen 8" class="img-fluid"></div>
-        <div class="col-4"><img src="https://picsum.photos/id/200/800" alt="Imagen 9" class="img-fluid"></div>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active mt-2" id="grid-tab" data-bs-toggle="tab" data-bs-target="#visualgrip" type="button" role="tab" aria-controls="grid" aria-selected="true">
+                <i class="fa-solid fa-grip"></i>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link mt-2" id="list-tab" data-bs-toggle="tab" data-bs-target="#post-individual" type="button" role="tab" aria-controls="list" aria-selected="false">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-content mt-3" id="myTabContent">
+  <!-- Visualización tipo Grid 9 imágenes (3 fotos por cada row)-->
+  <div class="tab-pane fade show active" id="visualgrip" role="tabpanel" aria-labelledby="grid-tab">
+    <div class="container">
+      <div class="row">
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/28/400" class="img-fluid w-100" alt="post1">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/170/400" class="img-fluid w-100" alt="post2">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/30/400" class="img-fluid w-100" alt="post3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/108/400" class="img-fluid w-100" alt="post4">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/104/400" class="img-fluid w-100" alt="post5">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/249/400" class="img-fluid w-100" alt="post6">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/129/400" class="img-fluid w-100" alt="post7">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/169/400" class="img-fluid w-100" alt="post8">
+        </div>
+        <div class="col-4 p-1">
+          <img src="https://picsum.photos/id/200/400" class="img-fluid w-100" alt="post9">
+        </div>
       </div>
     </div>
+  </div>
 
+    <!-- Visualización post individual + detalles 1 card por cada row-->
+    <div class="tab-pane fade" id="post-individual" role="tabpanel" aria-labelledby="list-tab">
+      <div class="d-flex justify-content-center">
+      <div class="row-cols-1 g-2">
+        <div class="col-6 w-auto h-auto">
+          <div class="card mb-3">
+            <img src="https://picsum.photos/id/169/400" class="card-img-top" alt="card1">
+            <div class="card-body">
+              <p class="card-text"><strong>204Likes</strong></p>
+              <p class="card-text">Perritos comiendo en un día de paseo libre</p>
+
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-6 w-auto h-auto">
+          <div class="card mb-3">
+            <img src="https://picsum.photos/id/249/400" class="card-img-top" alt="card2">
+            <div class="card-body">
+              <p class="card-text"><strong>20000Likes</strong></p>
+              <p class="card-text">Una vista muy relajante, en un lugar con muchas luces</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-6 w-auto h-auto">
+          <div class="card mb-3">
+            <img src="https://picsum.photos/id/108/400" class="card-img-top" alt="card3">
+            <div class="card-body">
+              <p class="card-text"><strong>300Likes</strong></p>
+              <p class="card-text">Un nuevo amanecer, en el mar</p>
+            </div>
+          </div>
+        </div>
+        
+
+    
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
